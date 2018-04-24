@@ -1,0 +1,22 @@
+<h1><%=current_user.first_name%>'s Playlist</h1>
+
+
+<a href="/users/:user_id/allsongs">Dashboard</a><br>
+<a href="/users/:user_id/logout" data-method="delete" >Logout</a><br>
+
+<table>
+   <tr>
+     <td>Artist</td>
+     <td>Title</td>
+     <td>Number of Times Added</td>
+  </tr> 
+<% current_user.songs_added.each do |x| %>
+  <tr>
+     <td><%=x.artist%></td>
+     <td><%=x.title%></td>
+     <td><%=x.users_added.count%></td>
+ <%end%>
+  </tr>
+</table>
+
+

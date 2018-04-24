@@ -1,0 +1,18 @@
+<a href="/users/:user_id/allsongs">Dashboard</a><br>
+<a href="/users/:user_id/logout" data-method="delete" >Logout</a><br>
+
+<h2>Others who added  <%=@current_song.artist%> <%=@current_song.title%></h2>
+
+<table>
+   <tr>
+     <td>Name</td>
+     <td>Times Added</td>
+  </tr> 
+  <% @current_song.users_added.each do |y| %>
+  <tr>
+     <td><%=y.first_name%></td> 
+     <td><%= y.songs_added.count%></td>
+  </tr> 
+  <% end %>
+</table>
+
